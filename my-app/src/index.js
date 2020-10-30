@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
+//css
+import "./index.css";
 
 // stateless functional component
 // always return JSX
@@ -7,7 +9,11 @@ import ReactDom from "react-dom";
 // nested Components, react tools
 function BookList() {
 	return (
-		<section>
+		<section className="booklist">
+			<Book />
+			<Book />
+			<Book />
+			<Book />
 			<Book />
 			<Book />
 			<Book />
@@ -16,7 +22,7 @@ function BookList() {
 }
 const Book = () => {
 	return (
-		<article>
+		<article className='book'>
 			<Image></Image>
 			<Title />
 			<Author />
@@ -29,10 +35,6 @@ const Image = () => (
 		alt=""
 	/>
 );
-const Title = () => (
-	<h1>Fortune and Glory: A Novel </h1>
-);
-const Author = () => (
-	<h4>Janet Evanovich </h4>
-);
+const Title = () => <h1>Fortune and Glory: A Novel </h1>;
+const Author = () => <h4>Janet Evanovich </h4>;
 ReactDom.render(<BookList />, document.getElementById("root"));
