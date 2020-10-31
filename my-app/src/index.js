@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-//css
+//CSS
 import "./index.css";
 
 // stateless functional component
@@ -35,6 +35,8 @@ const Image = () => (
 		alt=""
 	/>
 );
+//  JSX
 const Title = () => <h1>Fortune and Glory: A Novel </h1>;
-const Author = () => <h4>Janet Evanovich </h4>;
+const Author = () => <h4 syle={{color:'#617d98', fontSize: '0.75rem', marginTop: '0.75rem'}}>Janet Evanovich </h4>;
+
 ReactDom.render(<BookList />, document.getElementById("root"));
