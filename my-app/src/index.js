@@ -3,57 +3,25 @@ import ReactDom from "react-dom";
 //CSS
 import "./index.css";
 
-// always return JSX
-
-//setup vars
-const books = [
-	{
-		id: 1,
-		img:
-			"https://images-na.ssl-images-amazon.com/images/I/71tPmybVKxL._AC_UL200_SR200,200_.jpg",
-		title: "Fortune and Glory",
-		author: "Janet Evanovich",
-	},
-
-	{
-		id: 2,
-		img:
-			"https://images-na.ssl-images-amazon.com/images/I/91uwocAMtSL._AC_UL200_SR200,200_.jpg",
-		title: "A Promised Land",
-		author: "Barack Obama",
-	},
-	{
-		id: 3,
-		img:
-			"https://images-na.ssl-images-amazon.com/images/I/A1i8NcG05pL._AC_UL200_SR200,200_.jpg",
-		title: "A Time for Mercy (Jake Brigance)",
-		author: "John Grisham",
-	},
-];
-
+// import js file
+ import {books} from './books';
+ import { greeting } from "./testing/testing";
+//  default export for import
+  import Book from "./book";
 // stateless functional component
 
 function BookList() {
+	console.log(greeting);
 	return (
 		<section className="booklist">
-			{books.map((book,index) => {
+			{books.map((book, index) => {
 				return <Book key={book.id} {...book}></Book>;
 			})}
 		</section>
 	);
 }
 
-// Normal app writing
-const Book = (props) => {
-	const { img, title, author } = props;
-	return (
-		<article className="book">
-			<img src={img} alt="" />
-			<h1>{title} </h1>
-			<h4>{author}</h4>
-		</article>
-	);
-};
+
 // nested Components, react tools
 // const Book = () => {
 // 	return (
